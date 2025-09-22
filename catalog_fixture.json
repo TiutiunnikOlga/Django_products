@@ -1,0 +1,31 @@
+[
+{
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+        "name": "Телевизоры",
+        "description": "Чтобы не скучать по вечерам"
+    }
+},
+{
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+        "name": "Смартфоны",
+        "description": "Без них никуда"
+    }
+},
+{
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+        "name": "LG",
+        "description": "",
+        "photo": "",
+        "category": 1,
+        "price": 150000,
+        "created_at": "2025-09-22",
+        "updated_at": "2025-09-22"
+    }
+}
+]
