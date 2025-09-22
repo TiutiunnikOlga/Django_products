@@ -15,8 +15,8 @@ class Category(models.Model):
     )
 
     class Meta:
-        verbose_name = "продукт"
-        verbose_name_plural = "продукты"
+        verbose_name = "категория"
+        verbose_name_plural = "категории"
         ordering = [
             "name",
         ]
