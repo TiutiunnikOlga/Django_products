@@ -1,0 +1,23 @@
+{% extends 'catalog/includes/base.html' %}
+{% block content %}
+
+<form method="POST" enctype="multipart/form-data" action="{% url 'blog:create_post' %}">
+    {% csrf_token %}
+    <div class="container">
+        <div class="mb-3">
+          <label for="heading" class="form-label">Заголовок</label>
+          <input type="text" name="heading" class="form-control" id="heading" placeholder="введите заголовок">
+        </div>
+        <div class="mb-3">
+          <label for="content" class="form-label">Содержимое</label>
+          <textarea class="form-control" name="content" id="content" rows="3"></textarea>
+            <div class="mb-3">
+                <label for="photo" class="form-label">Прикрепите фото</label>
+                <input name="photo" class="form-control form-control-sm" id="photo" type="file">
+            </div>
+        </div>
+        <input class="btn btn-primary" type="submit" value="Отправить">
+    </div>
+</form>
+
+{% endblock %}
