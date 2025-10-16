@@ -1,0 +1,19 @@
+{% extends 'catalog/includes/base.html' %}
+{% load blog_tags %}
+{% block content %}
+
+<div class="container">
+    <div class="row text-center">
+        <img src="{{ object.photo | media_filter }}" class="img-fluid">
+        <div class="card-header">
+            <h4 class="my-0 font-weight-normal">{{ object.heading }}</h4>
+        </div>
+        <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                <li>{{ object.content }}</li>
+                <p><strong>Просмотры:</strong> {{ object.view_count }}</p>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
