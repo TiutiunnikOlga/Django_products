@@ -41,9 +41,12 @@ class Product(models.Model):
         help_text="Загрузите фото продукта",
     )
     category = models.ForeignKey(Category,
+        verbose_name='Категория',
         on_delete=models.SET_NULL, blank=True, null=True, related_name="product"
     )
-    price = models.IntegerField()
+    price = models.IntegerField(
+        verbose_name='Цена'
+    )
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
 
