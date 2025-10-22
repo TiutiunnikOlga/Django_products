@@ -15,7 +15,7 @@ class StyleFormMixin:
 class ProductForm(ModelForm):
     class Meta:
         model = Product
-        fields = '__all__'
+        exclude = ('owner', 'publish')
 
     FORBIDDEN_WORDS = {
         'казино', 'криптовалюта', 'крипта',
@@ -80,3 +80,8 @@ class ProductForm(ModelForm):
             'class': 'form-control',
             'placeholder': 'Введите стоимость'
         })
+
+class ProductModeratorForm(ModelForm):
+    class Meta:
+        model = Product
+        fields = ('publish',)

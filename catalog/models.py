@@ -1,5 +1,7 @@
 from django.db import models
 
+from loging.models import User
+
 
 class Category(models.Model):
     name = models.CharField(
@@ -50,10 +52,17 @@ class Product(models.Model):
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
 
+    owner = models.ForeignKey(User, verbose_name='Продавец', help_text='Укажите продавца', blank=True, null=True, on_delete=models.SET_NULL)
+
+    publish = models.BooleanField(default=False)
+
     class Meta:
         verbose_name = "продукт"
         verbose_name_plural = "продукты"
         ordering = ["name", "category", "price"]
+        permissions = [
+            ('can_unpublish_product', 'Can unpublish product'),
+        ]
 
     def __str__(self):
         return self.name
