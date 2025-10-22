@@ -17,7 +17,9 @@
                     </ul>
                     <a class="btn btn-primary" href="{% url 'catalog:product_detail' product.pk %}" role="button">Купить</a>
                     <a class="btn btn-primary" href="{% url 'catalog:product_update' product.pk %}" role="button">Редактировать</a>
+                    {% if perms.catalog.can_unpublish_product or user == product.owner %}
                     <a class="btn btn-danger" href="{% url 'catalog:product_delete' product.pk %}" role="button">Удалить</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
