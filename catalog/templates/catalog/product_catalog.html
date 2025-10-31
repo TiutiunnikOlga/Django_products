@@ -1,0 +1,23 @@
+{% extends 'catalog/includes/base.html' %}
+{% load my_tags %}
+{% block content %}
+
+<div class="container">
+    <div class="row text-center">
+        {% for product in products %}
+        <div class="col-3">
+            <div class="card mb-4 box-shadow">
+                <div class="card-body">
+                    <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                        <li>{{ product.name }}</li>
+                        <li>Цена: {{ product.price }}</li>
+                    </ul>
+                </div>
+                <a href="{% url 'catalog:home' %}" class="btn btn-primary">Назад ко всем товарам</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
