@@ -1,7 +1,7 @@
 import secrets
 
 from django.core.mail import send_mail
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView
 
@@ -30,6 +30,7 @@ class UserCreateView(CreateView):
             recipient_list=[user.email]
         )
         return super().form_valid(form)
+
 
 def email_verification(self, token):
     user = get_object_or_404(User, token=token)

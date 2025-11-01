@@ -1,7 +1,6 @@
 from django.contrib.auth.views import LoginView, LogoutView
 from django.urls import path
 
-from loging.apps import AppConfig
 from loging.views import UserCreateView, email_verification
 
 app_name = 'loging'

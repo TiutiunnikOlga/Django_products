@@ -1,8 +1,6 @@
 import os
 from pathlib import Path
 
-from django.conf.global_settings import SECRET_KEY, MEDIA_URL, MEDIA_ROOT, AUTH_USER_MODEL, LOGIN_REDIRECT_URL, \
-    LOGOUT_REDIRECT_URL, EMAIL_HOST_USER, EMAIL_HOST_PASSWORD
 from dotenv import load_dotenv
 
 load_dotenv()
