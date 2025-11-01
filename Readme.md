@@ -4,7 +4,7 @@
 
 Установка
 Клонируйте репозиторий:
-[gitHub] (https://github.com/TiutiunnikOlga/Django_app_product)
+[gitHub] (https://github.com/TiutiunnikOlga/Django_products)
 
 На данном этапе больше ничего не требуется
 
